@@ -34,9 +34,7 @@ public class Enfermeira {
         return turno;
     }
 
-    public void setTurno(Turno turno){
-        this.turno = turno;
-    }
+    
 
     public Enfermeira getChefe() {
         return chefe; 

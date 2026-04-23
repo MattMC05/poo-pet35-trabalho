@@ -1,22 +1,22 @@
-package Classes;
+package br.com.serratec.Classes;
 
-import java.security.Timestamp;
+import java.time.LocalDate;
 
-import Enums.StatusAt;
-import Enums.TipoAt;
+import br.com.serratec.Enums.StatusAt;
+import br.com.serratec.Enums.TipoAt;
 
 public class Atendimento {
-    private Integer id_atendimento;
-    private Timestamp data;
+    private Integer idAtendimento;
+    private LocalDate data;
     private TipoAt tipo;
     private StatusAt status;
     private String observacoes;
     private Medico medicoResponsavel;
     private Paciente pacienteAtendido;
    
-    public Atendimento(Integer id_atendimento, Timestamp data, TipoAt tipo, StatusAt status, String observacoes,
+    public Atendimento(Integer idAtendimento, LocalDate data, TipoAt tipo, StatusAt status, String observacoes,
             Medico medicoResponsavel, Paciente pacienteAtendido) {
-        this.id_atendimento = id_atendimento;
+        this.idAtendimento = idAtendimento;
         this.data = data;
         this.tipo = tipo;
         this.status = status;
@@ -24,12 +24,19 @@ public class Atendimento {
         this.medicoResponsavel = medicoResponsavel;
         this.pacienteAtendido = pacienteAtendido;
     }
-
-    public Integer getId_atendimento() {
-        return id_atendimento;
+    
+    @Override
+    public String toString() {
+        return "ID Atendimento: " + idAtendimento + ", Data: " + data + ", Tipo: " + tipo + ", Status: "
+                + status + ", Observações: " + observacoes + ", Médico Responsável: " + medicoResponsavel
+                + ", Paciente Atendido: " + pacienteAtendido;
     }
 
-    public Timestamp getData() {
+    public Integer getId_atendimento() {
+        return idAtendimento;
+    }
+
+    public LocalDate getData() {
         return data;
     }
 
@@ -52,14 +59,5 @@ public class Atendimento {
     public Paciente getPacienteAtendido() {
         return pacienteAtendido;
     }
-
-    @Override
-    public String toString() {
-        return "Atendimento [id_atendimento=" + id_atendimento + ", data=" + data + ", tipo=" + tipo + ", status="
-                + status + ", observacoes=" + observacoes + ", medicoResponsavel=" + medicoResponsavel
-                + ", pacienteAtendido=" + pacienteAtendido + "]";
-    }
-
-    
     
 }

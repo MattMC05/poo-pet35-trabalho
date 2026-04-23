@@ -3,12 +3,12 @@ package br.com.serratec.Classes;
 import br.com.serratec.Enums.Turno;
 
 public class Enfermeira extends Pessoa {
-    private int idEnfermeira;
+    private Integer idEnfermeira;
     private String cre;
     private Turno turno;
     private Enfermeira chefe;
-    
-    public Enfermeira(String nome, int idEnfermeira, String cre, Turno turno, Enfermeira chefe) {
+
+    public Enfermeira(String nome, Integer idEnfermeira, String cre, Turno turno, Enfermeira chefe) {
         super(nome);
         this.idEnfermeira = idEnfermeira;
         this.cre = cre;
@@ -16,7 +16,12 @@ public class Enfermeira extends Pessoa {
         this.chefe = chefe;
     }
 
-    public int getIdEnfermeira() {
+    @Override
+    public String toString() {
+        return super.toString()+", ID Enfermeira: " + idEnfermeira + ", CRE: " + cre + ", Turno: " + turno+ ", Chefe: " + chefe;
+    }
+
+    public Integer getIdEnfermeira() {
         return idEnfermeira;
     }
 
@@ -29,22 +34,8 @@ public class Enfermeira extends Pessoa {
         return turno;
     }
 
-    
-
     public Enfermeira getChefe() {
         return chefe; 
     }
-
-
-    @Override
-    public String toString() {
-        return "Enfermeira [idEnfermeira=" + idEnfermeira + ", nome=" + nome + ", cre=" + cre + ", turno=" + turno
-                + ", chefe=" + chefe;
-    }
-
-    
-    
-
-    
 
 }

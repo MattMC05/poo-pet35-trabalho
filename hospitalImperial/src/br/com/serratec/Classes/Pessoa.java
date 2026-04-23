@@ -11,6 +11,9 @@ public abstract class Pessoa {
         return nome;
     }
 
-    public abstract String getIdentificacao();
+    @Override
+    public String toString() {
+        return "Nome: " + nome;
+    }
 
 }

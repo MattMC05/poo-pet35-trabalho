@@ -2,19 +2,21 @@ package br.com.serratec.Classes;
 
 public class Hospital {
 
-    private int idHospital;
+    private Integer idHospital;
     private String nome;
     private String cnpj;
-
-    public Hospital() {
-    }
 
     public Hospital(String nome, String cnpj) {
         this.nome = nome;
         this.cnpj = cnpj;
     }
 
-    public int getIdHospital() {
+    @Override
+    public String toString() {
+        return "ID Hospital: " + idHospital + ", Nome: " + nome + ", CNPJ: " + cnpj;
+    }
+
+    public Integer getIdHospital() {
         return idHospital;
     }
 
@@ -24,15 +26,6 @@ public class Hospital {
 
     public String getCnpj() {
         return cnpj;
-    }
-
-    @Override
-    public String toString() {
-        return "Hospital{"
-                + "idHospital=" + idHospital
-                + ", nome='" + nome + '\''
-                + ", cnpj='" + cnpj + '\''
-                + '}';
     }
 
 }

@@ -1,30 +1,37 @@
 package br.com.serratec.Classes;
-public class Paciente {
+
+public class Paciente extends Pessoa{
     private Integer idPaciente;
-    private String nome;
     private String cpf;
     private String telefone;
-    private Integer idPlano;//private PlanoSaude plano; ??
-    
-    public Paciente(Integer idPaciente, String nome, String cpf, String telefone, Integer idPlano) {
+    private PlanoSaude plano;
+
+    public Paciente(String nome, Integer idPaciente, String cpf, String telefone, PlanoSaude plano) {
+        super(nome);
         this.idPaciente = idPaciente;
-        this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
-        this.idPlano = idPlano;
+        this.plano = plano;
     }
-    public String getNome() {
-        return nome;
+
+    @Override
+    public String toString() {
+        return "ID Paciente: " + idPaciente + ", CPF: " + cpf + ", Telefone: " + telefone + ", Plano: "
+                + plano;
     }
+
     public String getCpf() {
         return cpf;
     }
+
     public String getTelefone() {
         return telefone;
     }
-    public Integer getIdPlano() {
-        return idPlano;
+
+    public PlanoSaude getPlano() {
+        return plano;
     }
+    
     public Integer getIdPaciente() {
         return idPaciente;
     }

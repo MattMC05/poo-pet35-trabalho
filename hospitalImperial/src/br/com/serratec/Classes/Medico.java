@@ -1,13 +1,13 @@
 package br.com.serratec.Classes;
-public class Medico {
+public class Medico extends Pessoa{
     private Integer idMedico;
-    private String nome;
     private String especialidade;
     private String crm;
     
-    public Medico(Integer idMedico, String nome, String especialidade, String crm) {
+
+    public Medico(String nome, Integer idMedico, String especialidade, String crm) {
+        super(nome);
         this.idMedico = idMedico;
-        this.nome = nome;
         this.especialidade = especialidade;
         this.crm = crm;
     }
@@ -16,9 +16,6 @@ public class Medico {
         return idMedico;
     }
 
-    public String getNome() {
-        return nome;
-    }
 
     public String getEspecialidade() {
         return especialidade;

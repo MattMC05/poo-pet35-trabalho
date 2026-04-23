@@ -1,27 +1,33 @@
-package Classes;
+package br.com.serratec.Classes;
+
+import br.com.serratec.Enums.TipoLab;
 
 public class Laboratorio {
-    private Interger id_laboratorio;
+    private Integer idLaboratorio;
     private String nome;
     private TipoLab tipo;
-    public Laboratorio(Interger id_laboratorio, String nome, TipoLab tipo) {
-        this.id_laboratorio = id_laboratorio;
+
+    public Laboratorio(Integer idLaboratorio, String nome, TipoLab tipo) {
+        this.idLaboratorio = idLaboratorio;
         this.nome = nome;
         this.tipo = tipo;
     }
-    public Interger getId_laboratorio() {
-        return id_laboratorio;
+    
+    @Override
+    public String toString() {
+        return "ID Laboratório: " + idLaboratorio + ", Nome: " + nome + ", Tipo: " + tipo;
     }
+
+    public Integer getId_laboratorio() {
+        return idLaboratorio;
+    }
+
     public String getNome() {
         return nome;
     }
+
     public TipoLab getTipo() {
         return tipo;
     }
-    @Override
-    public String toString() {
-        return "Laboratorio [id_laboratorio=" + id_laboratorio + ", nome=" + nome + ", tipo=" + tipo + "]";
-    }
-
     
 }

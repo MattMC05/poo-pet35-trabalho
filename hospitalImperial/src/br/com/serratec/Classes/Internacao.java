@@ -6,17 +6,18 @@ public class Internacao {
     private Integer Internacao;
     private LocalDate dataEntrada;
     private LocalDate dataSaida;
-    private Integer Leito;
-    private Integer Atendimento;
+    private Leito leito;
+    private Atendimento atendimento;
 
-    
-    public Internacao(Integer internacao, LocalDate dataEntrada, LocalDate dataSaida, Integer leito,
-            Integer atendimento) {
+
+    public Internacao(Integer internacao, LocalDate dataEntrada, LocalDate dataSaida, Leito leito,
+            Atendimento atendimento) {
         Internacao = internacao;
         this.dataEntrada = dataEntrada;
         this.dataSaida = dataSaida;
-        Leito = leito;
-        Atendimento = atendimento;
+        this.leito = leito;
+        this.atendimento = atendimento;
+
     }
 
 
@@ -35,15 +36,19 @@ public class Internacao {
     }
 
 
-    public Integer getLeito() {
-        return Leito;
+    public Leito getLeito() {
+        return leito;
     }
 
 
-    public Integer getAtendimento() {
-        return Atendimento;
+    public Atendimento getAtendimento() {
+        return atendimento;
     }
 
+    
+
+    
+    
     
 
 }

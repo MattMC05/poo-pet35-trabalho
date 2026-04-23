@@ -2,38 +2,43 @@ package br.com.serratec.Classes;
 import java.time.LocalDate;
 
 public class Credenciamento {
-    private Integer Credenciamento;
+    private Integer idCredenciamento ;
     private LocalDate dataCredenciamento;
-    private Integer PlanoSaude;
-    private Integer Hospital;
+    private  PlanoSaude planoSaude;
+    private  Hospital hospital;
 
-    
-    public Credenciamento(Integer credenciamento, LocalDate dataCredenciamento, Integer planoSaude, Integer hospital) {
-        Credenciamento = credenciamento;
+       
+
+    public Credenciamento(Integer idCredenciamento, LocalDate dataCredenciamento, PlanoSaude planoSaude,
+            Hospital hospital) {
+        this.idCredenciamento = idCredenciamento;
         this.dataCredenciamento = dataCredenciamento;
-        PlanoSaude = planoSaude;
-        Hospital = hospital;
+        this.planoSaude = planoSaude;
+        this.hospital = hospital;
     }
 
 
-    public Integer getCredenciamento() {
-        return Credenciamento;
-    }
 
+    public Integer getIdCredenciamento() {
+        return idCredenciamento;
+    }
 
     public LocalDate getDataCredenciamento() {
         return dataCredenciamento;
     }
 
 
-    public Integer getPlanoSaude() {
-        return PlanoSaude;
+    public PlanoSaude getPlanoSaude() {
+        return planoSaude;
     }
 
 
-    public Integer getHospital() {
-        return Hospital;
+    public Hospital getHospital() {
+        return hospital;
     }
+
+
+    
 
     
 

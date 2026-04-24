@@ -1,38 +1,47 @@
 package br.com.serratec.persistence;
-/*
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
-*/
+import java.time.LocalDate;
+
+import br.com.serratec.Classes.Fatura;
+import br.com.serratec.Conexao.ConnectionFactory;
+import br.com.serratec.Enums.StatusFaEnum;
 
 public class FaturaDao {
-    /* 
-    private Connection connection;
+    private static Connection connection;
 
     public FaturaDao() {
         connection = new ConnectionFactory().getConnection();
     }
         
-       public List<xxx> listar(){
-            String sql = "select * from xxx";
-            List<xxx> xxxs = new ArrayList<>();
+       public Fatura dadosFatura(Integer id){
+            String sql = "select * from fatura where id_fatura = ? and status = 'Pago'";
             try {
                 PreparedStatement stmt = connection.prepareStatement(sql);
+                stmt.setInt(1, id);
                 ResultSet rs = stmt.executeQuery();
-                while (rs.next()) {
-                    xxx xxx = new xxx(rs.getInt("id"), rs.getString("nome"), rs.getString("email"));
-                    xxxs.add(xxx);
+                if (rs.next()) {
+                    return new Fatura(rs.getInt("id_fatura"),
+                    rs.getBigDecimal("valor"),
+                    rs.getString("forma_pagamento"),
+                    //rs.getObject("status", StatusFaEnum.class),
+                    StatusFaEnum.valueOf(rs.getString("status")),
+                    rs.getObject("data_emissao", LocalDate.class),
+                    rs.getObject("data_vencimento", LocalDate.class),
+                    rs.getInt("id_internacao"),
+                    rs.getInt("id_atendimento"),
+                    rs.getInt("id_exame"));
                 }
                 rs.close();
                 stmt.close();
                 connection.close();
             } catch (Exception e) {
-                System.err.println("Problema ao listar os xxxs");
+                System.err.println("Fatura inexistente");
                 e.printStackTrace();
             }
-            return xxxs;
+            return null;
         }
-        */
+        
 }

@@ -222,6 +222,58 @@ values
     (8, 'Isolamento', 8, 1),
     (9, 'Recuperação Pós-Anestésica', 9, 1),
     (10, 'Oncologia', 10, 1)
+	
+insert into plano_saude (nome, telefone, cobertura) values
+('Saúde Total', '21-99999-8888', 'Nacional'),
+('Vida Melhor', '21-98888-7777', 'Regional'),
+('Bem Estar', '21-97777-6666', 'Nacional'),
+('Saúde Sempre', '21-96666-5555', 'Regional'),
+('Plano Ouro', '21-95555-4444', 'Nacional'),
+('Plano Prata', '21-94444-3333', 'Regional'),
+('Plano Bronze', '21-93333-2222', 'Nacional'),
+('Plano Diamante', '21-92222-1111', 'Regional'),
+('Plano Premium', '21-91111-0000', 'Nacional'),
+('Plano Básico', '21-90000-9999', 'Regional');
+
+
+insert into credenciamento (id_plano,id_hospital) values
+( 1, 1),
+( 2, 1),
+( 3, 1),
+( 4, 1),
+( 5, 1),
+( 6, 1),
+( 7, 1),
+( 8, 1),
+( 9, 1),
+(10, 1);
+
+
+insert into internacao (data_entrada, data_saida,id_leito,id_atendimento) values
+('2024-01-10', '2024-01-15', 11, 2),
+('2024-02-15', '2024-02-20', 12, 3),
+('2024-03-05', '2024-03-10', 13, 4),
+('2024-04-12', '2024-04-18', 14, 5),
+('2024-05-18', '2024-05-25', 15, 6),
+('2024-06-20', '2024-06-27', 16, 7),
+('2024-07-25', '2024-07-30', 17, 8),
+('2024-08-30', '2024-09-05', 18, 9),
+('2024-09-15', '2024-09-22', 19, 10),
+('2024-10-01', '2024-10-07', 20, 1);
+
+
+insert into leito (status,id_ala) values
+('Livre', 1),
+('Ocupado', 1),
+('Em manutenção', 1),
+('Livre', 2),
+('Ocupado', 2),
+('Livre', 3),
+('Ocupado', 3),
+('Em manutenção', 4),
+('Livre', 4),
+('Ocupado', 5);
+
 
 select * from ala;
 select * from atendimento;

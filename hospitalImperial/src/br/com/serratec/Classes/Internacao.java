@@ -24,8 +24,7 @@ public class Internacao {
             + dataSaida+ ", Leito: " + leito + ", Atendimento: " + atendimento;
     }
 
-
-    public Integer getInternacao() {
+    public Integer getIdInternacao() {
         return idInternacao;
     }
 

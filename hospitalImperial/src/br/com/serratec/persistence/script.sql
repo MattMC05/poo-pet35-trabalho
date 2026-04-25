@@ -210,6 +210,19 @@ values
 (95.00, 'Dinheiro', 'Pago', '2026-04-21', 39, null, null),
 (2100.00, 'Cartão de Crédito', 'Pendente', '2026-05-05', 40, null, null);
 
+insert into ala (id_enfermeira, tipo, id_hospital) 
+values
+    (1, 'Pediatria', 1, 1),
+    (2, 'UTI Adulto', 2, 1),
+    (3, 'Maternidade', 3, 1),
+    (4, 'Emergência', 4, 1),
+    (5, 'Ortopedia', 5, 1),
+    (6, 'Cardiologia', 6, 1),
+    (7, 'Geriatria', 7, 1),
+    (8, 'Isolamento', 8, 1),
+    (9, 'Recuperação Pós-Anestésica', 9, 1),
+    (10, 'Oncologia', 10, 1)
+
 select * from ala;
 select * from atendimento;
 select * from credenciamento;
